@@ -1,3 +1,3 @@
-import { AxiosBase, IAxiosBase } from './axios-base';
+import { AxiosBase, IAxiosBaseConfig } from './axios-base';
 
-export { AxiosBase, IAxiosBase };
+export { AxiosBase, IAxiosBaseConfig };

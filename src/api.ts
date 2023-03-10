@@ -4,7 +4,7 @@ import { AxiosInstance, AxiosRequestHeaders, AxiosResponse } from 'axios';
  * @description axios 모듈화 클래스
  */
 export default class API {
-  private instance: AxiosInstance;
+  protected instance: AxiosInstance;
 
   constructor(instance: AxiosInstance) {
     this.instance = instance;

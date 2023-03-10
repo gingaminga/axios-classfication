@@ -1,46 +1,22 @@
-import axios, { AxiosInstance, AxiosResponse, AxiosInterceptorOptions, InternalAxiosRequestConfig } from 'axios';
+import axios, { AxiosResponse, AxiosInterceptorOptions, CreateAxiosDefaults, InternalAxiosRequestConfig } from 'axios';
 import API from './api';
 
-export interface IAxiosBase {
-  host: string;
-}
+export interface IAxiosBaseConfig extends CreateAxiosDefaults {}
 
 export class AxiosBase extends API {
-  private axiosInstance: AxiosInstance;
+  constructor(config: IAxiosBaseConfig) {
+    const { ...axiosConfig } = config;
+    const axiosInstance = axios.create(axiosConfig);
 
-  constructor(config: IAxiosBase) {
-    const axiosInstance = axios.create({
-      timeout: 5000,
-      withCredentials: true,
-    });
     super(axiosInstance);
-
-    this.axiosInstance = axiosInstance;
-    this.initialize(config);
   }
 
   /**
-   * @description 초기 설정
-   * @param config 설정 정보
+   * @description bearer token 설정
+   * @param token token 값
    */
-  private initialize(config: IAxiosBase) {
-    this.setBaseURL(config.host);
-  }
-
-  /**
-   * @description access token 설정
-   * @param token access token 값
-   */
-  setAccessToken(token: string) {
-    this.axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  }
-
-  /**
-   * @description 호스트 설정
-   * @param host 주소
-   */
-  private setBaseURL(host: string) {
-    this.axiosInstance.defaults.baseURL = host;
+  setBearerToken(token: string) {
+    this.instance.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
 
   /**
@@ -56,7 +32,7 @@ export class AxiosBase extends API {
     onRejected?: ((error: unknown) => any) | null,
     options?: AxiosInterceptorOptions,
   ) {
-    this.axiosInstance.interceptors.request.use(onFulfilled, onRejected, options);
+    this.instance.interceptors.request.use(onFulfilled, onRejected, options);
   }
 
   /**
@@ -70,6 +46,6 @@ export class AxiosBase extends API {
     onRejected?: ((error: unknown) => any) | null,
     options?: AxiosInterceptorOptions,
   ) {
-    this.axiosInstance.interceptors.response.use(onSuccess, onRejected, options);
+    this.instance.interceptors.response.use(onSuccess, onRejected, options);
   }
 }
