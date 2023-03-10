@@ -15,7 +15,7 @@ interface IActivityData {
 (async () => {
   try {
     const config = {
-      host: url.BORED.HOST,
+      baseURL: url.BORED.HOST,
     };
 
     const Bored = new AxiosBase(config); // 객체 생성
