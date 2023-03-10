@@ -1,4 +1,10 @@
-import axios, { AxiosResponse, AxiosInterceptorOptions, CreateAxiosDefaults, InternalAxiosRequestConfig } from 'axios';
+import axios, {
+  AxiosResponse,
+  AxiosInterceptorOptions,
+  CreateAxiosDefaults,
+  InternalAxiosRequestConfig,
+  RawAxiosRequestHeaders,
+} from 'axios';
 import API from './api';
 
 export interface IAxiosBaseConfig extends CreateAxiosDefaults {}
@@ -17,6 +23,83 @@ export class AxiosBase extends API {
    */
   setBearerToken(token: string) {
     this.instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  }
+
+  /**
+   * @description common header 설정
+   * @param headers header 값
+   */
+  setCommonHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.common = {
+      ...this.instance.defaults.headers.common,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description delete header 설정
+   * @param headers header 값
+   */
+  setDeleteHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.delete = {
+      ...this.instance.defaults.headers.delete,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description get header 설정
+   * @param headers header 값
+   */
+  setGetHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.get = {
+      ...this.instance.defaults.headers.get,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description head header 설정
+   * @param headers header 값
+   */
+  setHeadHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.head = {
+      ...this.instance.defaults.headers.head,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description patch header 설정
+   * @param headers header 값
+   */
+  setPatchHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.patch = {
+      ...this.instance.defaults.headers.patch,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description post header 설정
+   * @param headers header 값
+   */
+  setPostHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.post = {
+      ...this.instance.defaults.headers.post,
+      ...headers,
+    };
+  }
+
+  /**
+   * @description put header 설정
+   * @param headers header 값
+   */
+  setPutHeader(headers: RawAxiosRequestHeaders) {
+    this.instance.defaults.headers.put = {
+      ...this.instance.defaults.headers.put,
+      ...headers,
+    };
   }
 
   /**
