@@ -132,4 +132,4 @@ axiosBase.setResponseInterceptor(
 
 ## 🎊 Thanks
 
-AxiosBase class에서 제공해야한다고 생각하는 axios의 기능들은 `issue` 또는 `PR` 날려주시면 확인하고 처리하겠습니다. :)
+AxiosBase class에서 제공해야한다고 생각하는 axios의 기능들은 `issue` 또는 `PR` 주세요. :)
