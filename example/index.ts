@@ -18,11 +18,11 @@ interface IActivityData {
       baseURL: url.BORED.HOST,
     };
 
-    const Bored = new AxiosBase(config); // 객체 생성
+    const bored = new AxiosBase(config); // 객체 생성
 
     console.log('***** What activity to do? *****\n');
 
-    const { data } = await Bored.get<undefined, IActivityData>(url.BORED.PATH.ACTIVITY);
+    const { data } = await bored.get<undefined, IActivityData>(url.BORED.PATH.ACTIVITY);
 
     console.log(`'${data.activity}' is would be nice :)`);
   } catch (error) {
