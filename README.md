@@ -126,7 +126,9 @@ axiosBase.setResponseInterceptor(
 );
 ```
 
-> 💡 간단한 예제는 [example](https://github.com/gingaminga/axios-classification/tree/main/example)를 참고하세요. :)
+## 👀 Example
+
+[example](https://github.com/gingaminga/axios-classification/tree/main/example)를 참고하세요. :)
 
 ## 🎊 Thanks
 
