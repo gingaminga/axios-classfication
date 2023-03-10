@@ -95,6 +95,30 @@ axiosBase.setBearerToken('123456789');
 */
 ```
 
+### Setting header
+
+다른 값을 헤더에 넣어야한다면 아래 함수들을 사용하세요.<br/>
+
+- `setCommonHeader`
+- `setDeleteHeader`
+- `setGetHeader`
+- `setHeadHeader`
+- `setPatchHeader`
+- `setPostHeader`
+- `setPutHeader`
+
+해당 함수들의 파라미터들은 모두 같아요.
+
+```typescript
+axiosBase.setCommonHeader({
+  'Content-type': 'application/json',
+});
+
+axiosBase.setPostHeader({
+  test: 'test',
+});
+```
+
 ### Interceptor
 
 요청하기 전, 또는 응답 전에 인터셉트를 해야한다면 `setRequestInterceptor`, `setResponseInterceptor`를 사용하세요.<br/>
