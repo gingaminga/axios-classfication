@@ -1,0 +1,16 @@
+{
+  "name": "axios-classification",
+  "version": "0.0.1",
+  "description": "Use axios classification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "gingaminga <cjhwaan@gamil.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {}
+}
