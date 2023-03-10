@@ -12,6 +12,15 @@
   ],
   "author": "gingaminga <cjhwaan@gamil.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gingaminga/axios-classification.git"
+  },
+  "homepage": "https://github.com/gingaminga/axios-classification.git",
+  "bugs": {
+    "url": "https://github.com/gingaminga/axios-classification/issues",
+    "email": "cjhwaan@gamil.com"
+  },
   "devDependencies": {
     "typescript": "^4.9.5"
   },
