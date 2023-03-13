@@ -77,7 +77,7 @@ interface IResponseData {
 }
 
 // Get
-const { data } = axiosBase.get<undefined, IResponseData>('/path/to', params);
+const { data } = axiosBase.get<undefined, IResponseData>('/path/to');
 ```
 
 ### Setting bearer auth token
