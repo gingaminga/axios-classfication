@@ -8,7 +8,9 @@
     "remove": "delete dist"
   },
   "keywords": [
-    "axios"
+    "axios",
+    "axios-class",
+    "axios-classification"
   ],
   "author": "gingaminga <cjhwaan@gamil.com>",
   "license": "ISC",
