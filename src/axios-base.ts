@@ -1,6 +1,8 @@
-import axios, {
-  AxiosResponse,
+import axios from 'axios';
+import type {
+  AxiosError,
   AxiosInterceptorOptions,
+  AxiosResponse,
   CreateAxiosDefaults,
   InternalAxiosRequestConfig,
   RawAxiosRequestHeaders,
@@ -8,6 +10,7 @@ import axios, {
 import API from './api';
 
 export interface IAxiosBaseConfig extends CreateAxiosDefaults {}
+export type IAxiosError = AxiosError;
 
 export class AxiosBase extends API {
   constructor(config: IAxiosBaseConfig) {

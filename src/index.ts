@@ -1,3 +1,4 @@
-import { AxiosBase, IAxiosBaseConfig } from './axios-base';
+import { AxiosBase } from './axios-base';
+import type { IAxiosBaseConfig, IAxiosError } from './axios-base';
 
-export { AxiosBase, IAxiosBaseConfig };
+export { AxiosBase, IAxiosBaseConfig, IAxiosError };
