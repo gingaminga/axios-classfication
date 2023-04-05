@@ -1,4 +1,4 @@
 import { AxiosBase } from './axios-base';
-import type { IAxiosBaseConfig, IAxiosError } from './axios-base';
+import type { IAxiosBaseConfig, TAxiosError, TAxiosResponse } from './axios-base';
 
-export { AxiosBase, IAxiosBaseConfig, IAxiosError };
+export { AxiosBase, IAxiosBaseConfig, TAxiosError, TAxiosResponse };

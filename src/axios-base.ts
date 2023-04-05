@@ -10,7 +10,8 @@ import type {
 import API from './api';
 
 export interface IAxiosBaseConfig extends CreateAxiosDefaults {}
-export type IAxiosError = AxiosError;
+export type TAxiosError = AxiosError;
+export type TAxiosResponse = AxiosResponse;
 
 export class AxiosBase extends API {
   constructor(config: IAxiosBaseConfig) {
