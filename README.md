@@ -150,6 +150,27 @@ axiosBase.setResponseInterceptor(
 );
 ```
 
+### Extends class
+
+class를 만들고, 상속을 받아 사용할 수 있습니다.
+원하는 `property`를 class 내부에서 사용해야 한다면 아래 방법처럼 사용하세요.
+
+```typescript
+import { AxiosBase } from 'axios-classification';
+
+class Test extends AxiosBase {
+  private readonly key = '1234567890';
+
+  getKey() {
+    return this.key;
+  }
+}
+
+export const TestClient = new Test({
+  baseURL: 'your url',
+});
+```
+
 ## 👀 Example
 
 [example](https://github.com/gingaminga/axios-classification/tree/main/example)를 참고하세요. :)
