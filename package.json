@@ -1,6 +1,6 @@
 {
   "name": "axios-classification",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Use axios classification",
   "main": "dist/index.js",
   "scripts": {
