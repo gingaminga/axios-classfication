@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosRequestHeaders, AxiosResponse } from 'axios';
+import { AxiosInstance, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
 
 /**
  * @description axios 모듈화 클래스
@@ -16,8 +16,8 @@ export default class API {
    * @param params 파라미터
    * @param headers 헤더
    */
-  delete<Params, Data>(endpoint: string, params?: Params, headers?: AxiosRequestHeaders): Promise<AxiosResponse<Data>> {
-    return this.instance.delete(endpoint, {
+  delete<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
+    return this.instance.delete<Params, AxiosResponse<Data>>(endpoint, {
       data: params,
       headers,
     });
@@ -29,8 +29,8 @@ export default class API {
    * @param params 파라미터
    * @param headers 헤더
    */
-  get<Params, Data>(endpoint: string, params?: Params, headers?: AxiosRequestHeaders): Promise<AxiosResponse<Data>> {
-    return this.instance.get(endpoint, {
+  get<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
+    return this.instance.get<Params, AxiosResponse<Data>>(endpoint, {
       params,
       headers,
     });
@@ -42,8 +42,8 @@ export default class API {
    * @param params 파라미터
    * @param headers 헤더
    */
-  patch<Params, Data>(endpoint: string, params?: Params, headers?: AxiosRequestHeaders): Promise<AxiosResponse<Data>> {
-    return this.instance.patch(endpoint, params, {
+  patch<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
+    return this.instance.patch<Params, Data>(endpoint, params, {
       headers,
     });
   }
@@ -54,8 +54,8 @@ export default class API {
    * @param params 파라미터
    * @param headers 헤더
    */
-  post<Params, Data>(endpoint: string, params?: Params, headers?: AxiosRequestHeaders): Promise<AxiosResponse<Data>> {
-    return this.instance.post(endpoint, params, {
+  post<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
+    return this.instance.post<Params, Data>(endpoint, params, {
       headers,
     });
   }
@@ -66,8 +66,8 @@ export default class API {
    * @param params 파라미터
    * @param headers 헤더
    */
-  put<Params, Data>(endpoint: string, params?: Params, headers?: AxiosRequestHeaders): Promise<AxiosResponse<Data>> {
-    return this.instance.put(endpoint, params, {
+  put<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
+    return this.instance.put<Params, Data>(endpoint, params, {
       headers,
     });
   }
