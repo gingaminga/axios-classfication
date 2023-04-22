@@ -43,7 +43,7 @@ export default class API {
    * @param headers 헤더
    */
   patch<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.patch<Params, Data>(endpoint, params, {
+    return this.instance.patch<Params, AxiosResponse<Data>>(endpoint, params, {
       headers,
     });
   }
@@ -55,7 +55,7 @@ export default class API {
    * @param headers 헤더
    */
   post<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.post<Params, Data>(endpoint, params, {
+    return this.instance.post<Params, AxiosResponse<Data>>(endpoint, params, {
       headers,
     });
   }
@@ -67,7 +67,7 @@ export default class API {
    * @param headers 헤더
    */
   put<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.put<Params, Data>(endpoint, params, {
+    return this.instance.put<Params, AxiosResponse<Data>>(endpoint, params, {
       headers,
     });
   }
