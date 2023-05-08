@@ -26,7 +26,7 @@ export class AxiosBase extends API {
    * @param error 에러 객체
    * @returns true : axios error / flase : not axios error
    */
-  isAxiosError<T = any, D = any>(error: unknown) {
+  isAxiosError<T = any, D = any>(error: unknown): error is AxiosError<T, D> {
     return isAxiosError<T, D>(error);
   }
 
