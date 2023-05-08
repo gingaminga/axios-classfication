@@ -22,6 +22,14 @@ export class AxiosBase extends API {
   }
 
   /**
+   * @description axios 인스턴스의 설정 정보 가져오기
+   * @returns 설정 정보
+   */
+  getDefaultConfigOfInstance() {
+    return this.instance.defaults;
+  }
+
+  /**
    * @description axios error인지 확인하기
    * @param error 에러 객체
    * @returns true : axios error / flase : not axios error
