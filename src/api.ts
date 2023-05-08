@@ -1,4 +1,4 @@
-import { AxiosInstance, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
 
 /**
  * @description axios 모듈화 클래스
@@ -70,5 +70,13 @@ export default class API {
     return this.instance.put<Data, AxiosResponse<Data, Data>, Params>(endpoint, params, {
       headers,
     });
+  }
+
+  /**
+   * @description 그 외 모든 원하는 요청
+   * @param config 요청 설정값
+   */
+  request<Params, Data>(config: AxiosRequestConfig<Params>) {
+    return this.instance.request<Data, AxiosResponse<Data, Data>, Params>(config);
   }
 }
