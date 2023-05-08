@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import type {
   AxiosError,
   AxiosInterceptorOptions,
@@ -19,6 +19,15 @@ export class AxiosBase extends API {
     const axiosInstance = axios.create(axiosConfig);
 
     super(axiosInstance);
+  }
+
+  /**
+   * @description axios error인지 확인하기
+   * @param error 에러 객체
+   * @returns true : axios error / flase : not axios error
+   */
+  isAxiosError<T = any, D = any>(error: unknown) {
+    return isAxiosError<T, D>(error);
   }
 
   /**
