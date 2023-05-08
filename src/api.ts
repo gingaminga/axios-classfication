@@ -17,7 +17,7 @@ export default class API {
    * @param headers 헤더
    */
   delete<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.delete<Params, AxiosResponse<Data>>(endpoint, {
+    return this.instance.delete<Data, AxiosResponse<Data, Data>, Params>(endpoint, {
       data: params,
       headers,
     });
@@ -30,7 +30,7 @@ export default class API {
    * @param headers 헤더
    */
   get<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.get<Params, AxiosResponse<Data>>(endpoint, {
+    return this.instance.get<Data, AxiosResponse<Data, Data>, Params>(endpoint, {
       params,
       headers,
     });
@@ -43,7 +43,7 @@ export default class API {
    * @param headers 헤더
    */
   patch<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.patch<Params, AxiosResponse<Data>>(endpoint, params, {
+    return this.instance.patch<Data, AxiosResponse<Data, Data>, Params>(endpoint, params, {
       headers,
     });
   }
@@ -55,7 +55,7 @@ export default class API {
    * @param headers 헤더
    */
   post<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.post<Params, AxiosResponse<Data>>(endpoint, params, {
+    return this.instance.post<Data, AxiosResponse<Data, Data>, Params>(endpoint, params, {
       headers,
     });
   }
@@ -67,7 +67,7 @@ export default class API {
    * @param headers 헤더
    */
   put<Params, Data>(endpoint: string, params?: Params, headers?: RawAxiosRequestHeaders) {
-    return this.instance.put<Params, AxiosResponse<Data>>(endpoint, params, {
+    return this.instance.put<Data, AxiosResponse<Data, Data>, Params>(endpoint, params, {
       headers,
     });
   }
